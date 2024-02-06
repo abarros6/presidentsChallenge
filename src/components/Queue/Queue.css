@@ -1,30 +1,23 @@
 
 
-.home_background{
+.queue_background{
     width:100%;
     height:fit-content;
 }
 
-.home_main_container{
-    min-height:80vh;
-    height:fit-content;
-    display: flex;
-    flex-direction: row;
-}
-
-.home_left_container{
+.queue_container{
     width:100%;
     padding-left: 10%;
-
+    padding-right:10%;
 }
 
-h1.home_main_header{
+h1.queue_main_header{
     font-size: 4em;
     margin-top: 0px;
     margin-bottom: 30%;
 }
 
-p.home_main_p{
+p.queue_main_p{
     margin:0px;
 }
 
@@ -52,14 +45,4 @@ p.home_main_p{
 }
 .main_entry_button:hover{
     background-color: rgba(41, 40, 40, 0.103);
-}
-
-.home_right_container{
-    width:50%;
-    padding:10%;
-}
-img.home_main_image{
-    width:100%;
-    height:100%;
-    object-fit: contain;
 }

@@ -13,10 +13,13 @@ const Navbar = () => {
                         <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/">Home</NavLink>
                     </li>
                     <li className='navbar_list_items'>
-                        <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/events">Events</NavLink>
+                        <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/Queue">Queue</NavLink>
                     </li>
                     <li className='navbar_list_items'>
-                        <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/cheer/login">Login</NavLink>
+                        <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/About">About</NavLink>
+                    </li>
+                    <li className='navbar_list_items'>
+                        <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/Login">Login</NavLink>
                     </li>
                 </ul>
                 

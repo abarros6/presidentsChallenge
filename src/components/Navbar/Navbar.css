@@ -1,4 +1,6 @@
 .nav_background{
+    position: fixed;
+    top: 0;
     width:100%;
     height:7vh;
     /* background-image: linear-gradient(to right, rgb(71, 34, 34), rgb(97, 25, 25) ); */

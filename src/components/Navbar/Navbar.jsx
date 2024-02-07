@@ -18,9 +18,6 @@ const Navbar = () => {
                     <li className='navbar_list_items'>
                         <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/About">About</NavLink>
                     </li>
-                    <li className='navbar_list_items'>
-                        <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/LoginSignup">login or sign up</NavLink>
-                    </li>
                 </ul>
                 
             </div>

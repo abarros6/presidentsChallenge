@@ -13,6 +13,9 @@ const Navbar = () => {
                         <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/">Home</NavLink>
                     </li>
                     <li className='navbar_list_items'>
+                        <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/Form">Form</NavLink>
+                    </li>
+                    <li className='navbar_list_items'>
                         <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/Queue">Queue</NavLink>
                     </li>
                     <li className='navbar_list_items'>

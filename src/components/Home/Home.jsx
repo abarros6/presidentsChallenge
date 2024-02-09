@@ -7,7 +7,6 @@ const Home = () => {
 
   function toQueue(e) {
     e.preventDefault();
-    window.location.replace("/Queue");
   }
   return (
     <div className='home_background'>
@@ -15,7 +14,9 @@ const Home = () => {
         <div className='home_left_container'>
           <h1 className='home_main_header'>Welcome to Triage</h1>
           <form onSubmit={toQueue}>
+          <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/Queue">
             <button>Enter the queue now!</button>
+            </NavLink>
           </form>
         </div>
       </div>

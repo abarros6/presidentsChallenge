@@ -5,6 +5,8 @@ const Form = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
+    address: '',
+    healthCardNo: '',
     age: '',
     symptoms: '',
     medicalHistory: '',
@@ -21,6 +23,8 @@ const Form = () => {
     setFormData({
       firstName: '',
       lastName: '',
+      address: '',
+      healthCardNo: '',
       age: '',
       symptoms: '',
       medicalHistory: '',
@@ -29,9 +33,9 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label className='first_name_label'>
         First Name:
-        <input
+        <input className='first_name_input'
           type='text'
           name='firstName'
           value={formData.firstName}
@@ -39,9 +43,9 @@ const Form = () => {
           required
         />
       </label>
-      <label>
+      <label className='last_name_label'>
         Last Name:
-        <input
+        <input className='last_name_input'
           type='text'
           name='lastName'
           value={formData.lastName}
@@ -49,9 +53,29 @@ const Form = () => {
           required
         />
       </label>
-      <label>
+      <label className='address_label'>
+        Address:
+        <input className='address_input'
+          type='text'
+          name='address'
+          value={formData.address}
+          onChange={handleChange}
+          required
+        />
+      </label>
+      <label className='haelthCardNo_label'>
+        Health Card Number:
+        <input className='healthCardNo_input'
+          type='text'
+          name='healthCardNo'
+          value={formData.healthCardNo}
+          onChange={handleChange}
+          required
+        />
+      </label>
+      <label className='age_label'>
         Age:
-        <input
+        <input className='age_input'
           type='number'
           name='age'
           value={formData.age}
@@ -59,24 +83,24 @@ const Form = () => {
           required
         />
       </label>
-      <label>
+      <label className='symptoms_label'>
         Symptoms:
-        <textarea
+        <textarea className='symptoms_textarea'
           name='symptoms'
           value={formData.symptoms}
           onChange={handleChange}
           required
         />
       </label>
-      <label>
+      <label className='medicalHistory_label'>
         Medical History:
-        <textarea
+        <textarea className='medicalHistory_textarea'
           name='medicalHistory'
           value={formData.medicalHistory}
           onChange={handleChange}
         />
       </label>
-      <button type='submit'>Submit</button>
+      <button className='submit_button' type='submit'>Submit</button>
     </form>
   );
 };

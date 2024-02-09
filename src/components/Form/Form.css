@@ -1,0 +1,104 @@
+.first_name_label{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.first_name_input{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.last_name_label{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.last_name_input{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.address_label{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.address_input{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.healthCardNo_label{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.healthCardNo_input{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.age_label{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.age_input{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.symptoms_label{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.symptoms_textarea{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.medicalHistory_label{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.medicalHistory_textarea{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.submit_button{
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}

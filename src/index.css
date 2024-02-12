@@ -25,8 +25,6 @@ a:hover {
 body {
   margin: 0;
   margin-top: 5%;
-  display: flex;
-  align-items: flex-start;
 }
 
 h1 {
@@ -64,4 +62,78 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Global Styles */
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+/* Home Page */
+
+.homepage-container {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 3.2em;
+}
+
+.header p {
+  font-size: 1.2em;
+}
+
+/* Form Page */
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Queue Page */
+
+.queue-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.queue-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.2em;
 }

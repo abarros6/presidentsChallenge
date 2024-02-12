@@ -1,48 +1,46 @@
-
-
-.queue_background{
-    width:100%;
-    height:fit-content;
-}
-
-.queue_container{
-    width:100%;
-    padding-left: 10%;
-    padding-right:10%;
-}
-
-h1.queue_main_header{
-    font-size: 4em;
-    margin-top: 0px;
-    margin-bottom: 30%;
-}
-
-p.queue_main_p{
-    margin:0px;
-}
-
-.main_entry_container{
-    width:80%;
-    height: fit-content;
-    padding-top:5%;
-    padding-bottom:5%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border-radius: 10px;;
-}
-.main_entry_container:hover{
-    background-color: rgba(128, 128, 128, 0.103);
-}
-
-.main_entry_button{
-    background:none;
-    border:none;
-    font-size: 1.5em;
-    color:black;
-    padding:5px;
-    border-radius: 10px;;
-}
-.main_entry_button:hover{
-    background-color: rgba(41, 40, 40, 0.103);
-}
+.queue-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .input-container {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .queue-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .queue-item {
+    background-color: #f0f0f0;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    color: black;
+    text-align: center;
+  }
+  
+  .queue-item:last-child {
+    margin-bottom: 0;
+  }

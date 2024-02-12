@@ -32,75 +32,89 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label className='first_name_label'>
+    <form className="form-container" onSubmit={handleSubmit}>
+      <label htmlFor="firstName" className="form-label">
         First Name:
-        <input className='first_name_input'
-          type='text'
-          name='firstName'
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
           value={formData.firstName}
           onChange={handleChange}
+          className="form-input"
           required
         />
       </label>
-      <label className='last_name_label'>
+      <label htmlFor="lastName" className="form-label">
         Last Name:
-        <input className='last_name_input'
-          type='text'
-          name='lastName'
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
           value={formData.lastName}
           onChange={handleChange}
+          className="form-input"
           required
         />
       </label>
-      <label className='address_label'>
+      <label htmlFor="address" className="form-label">
         Address:
-        <input className='address_input'
-          type='text'
-          name='address'
+        <input
+          type="text"
+          id="address"
+          name="address"
           value={formData.address}
           onChange={handleChange}
+          className="form-input"
           required
         />
       </label>
-      <label className='haelthCardNo_label'>
+      <label htmlFor="healthCardNo" className="form-label">
         Health Card Number:
-        <input className='healthCardNo_input'
-          type='text'
-          name='healthCardNo'
+        <input
+          type="text"
+          id="healthCardNo"
+          name="healthCardNo"
           value={formData.healthCardNo}
           onChange={handleChange}
+          className="form-input"
           required
         />
       </label>
-      <label className='age_label'>
+      <label htmlFor="age" className="form-label">
         Age:
-        <input className='age_input'
-          type='number'
-          name='age'
+        <input
+          type="number"
+          id="age"
+          name="age"
           value={formData.age}
           onChange={handleChange}
+          className="form-input"
           required
         />
       </label>
-      <label className='symptoms_label'>
+      <label htmlFor="symptoms" className="form-label">
         Symptoms:
-        <textarea className='symptoms_textarea'
-          name='symptoms'
+        <textarea
+          id="symptoms"
+          name="symptoms"
           value={formData.symptoms}
           onChange={handleChange}
+          className="form-textarea"
           required
         />
       </label>
-      <label className='medicalHistory_label'>
+      <label htmlFor="medicalHistory" className="form-label">
         Medical History:
-        <textarea className='medicalHistory_textarea'
-          name='medicalHistory'
+        <textarea
+          id="medicalHistory"
+          name="medicalHistory"
           value={formData.medicalHistory}
           onChange={handleChange}
+          className="form-textarea"
         />
       </label>
-      <button className='submit_button' type='submit'>Submit</button>
+      <button type="submit" className="submit-button">Submit</button>
     </form>
   );
 };

@@ -59,27 +59,5 @@
   }
   
   .queue-form button:hover {
-    background-color: #1F2544;
     transform: scale(1.05);
-  }
-  
-  /* Queue position */
-  .queue-position {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .queue-position p {
-    font-size: 1.2em;
-  }
-  
-  /* Link */
-  a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-  }
-  
-  a:hover {
-    color: #535bf2;
   }

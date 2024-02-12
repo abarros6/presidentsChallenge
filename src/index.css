@@ -39,7 +39,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -70,6 +69,17 @@ body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  height: 100vh;
+  max-height: calc(100vh - 100px); /* Set maximum height for the page container */
+ 
+  padding-bottom: 20px; /* Add some padding to ensure scrolling space at the bottom */
+}
+
+body::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -117,7 +127,6 @@ p {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
@@ -126,17 +135,9 @@ p {
   padding: 10px;
 }
 
-/* Queue Page */
-
-.queue-container {
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: #e6a4b4;
-}
 
 .queue-item {
   padding: 10px;
-  border-bottom: 1px solid #ccc;
   font-size: 1.2em;
 }
 

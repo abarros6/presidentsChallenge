@@ -1,11 +1,17 @@
 .nav_background{
     position: fixed;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Add a small shadow */
     top: 0;
     width:100%;
     height:7vh;
     margin:0px;
     position: fixed;
+    
 }
+.nav_hidden {
+    top: -50px; /* Move the navbar above the viewport */
+    transition: top .5s;
+  }
 .nav_container{
     height:100%;
     width:100%;

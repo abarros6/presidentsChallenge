@@ -1,12 +1,29 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './Navbar.css'
 import { NavLink } from 'react-router-dom'
 
 
 
 const Navbar = () => {
+
+    const [isHidden, setIsHidden] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+        setIsHidden(currentScrollPos > 50 && currentScrollPos > lastScrollPos);
+            lastScrollPos = currentScrollPos;
+        };
+
+        let lastScrollPos = window.pageY;
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return(
-        <div className='nav_background'>
+        <div className={`nav_background ${isHidden ? 'nav_hidden' : ''}`}>
             <div className='nav_container'>
                 <ul className='navbar_list'>
                     <li className='navbar_list_items'>

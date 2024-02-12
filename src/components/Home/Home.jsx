@@ -13,7 +13,9 @@ const Home = () => {
     <div className="homepage-container">
       <div className="header">
         <h1>Welcome to Triage Queue</h1>
-        <p className="placeholder-text">Get in line before you arrive at the hospital.</p>
+        <p className="placeholder-text">Get in line before you arrive at the hospital by just answering a few questions, and wait at home until a phsyician can assess you.
+        If you are experiencing an urgent medical problem go directly to an emergency room. <br  />
+        By using this service you acknowledge that COMPANY NAME is not responsible for any healthcare you may or may not receive.</p>
       </div>
       <div className="queue-form">
         <button onClick={handleClick}>Join Queue</button>

@@ -46,23 +46,21 @@
     background-color: #1a1a1a; /* Added background color */
     color: rgba(255, 255, 255, 0.87); /* Added text color */
   }
-  
+
   .queue-form button {
-    width: 100%;
-    padding: 20px; /* Increased padding for a larger button */
-    border-radius: 8px;
-    border: 1px solid transparent;
-    font-size: 1.2em; /* Increased font size */
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    color: rgba(255, 255, 255, 0.87);
+    padding: 10px 20px;
+    background-color: #474F7A;
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    border-radius: 5px;
     cursor: pointer;
-    transition: border-color 0.25s;
+    transition: background-color 0.3s, transform 0.3s;
   }
   
   .queue-form button:hover {
-    border-color: #646cff;
+    background-color: #1F2544;
+    transform: scale(1.05);
   }
   
   /* Queue position */

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import './Home.css'
-
-import { NavLink, Route } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    // Placeholder onclick function
-    console.log('Button clicked!');
+    navigate('/Form');
   };
 
   return (

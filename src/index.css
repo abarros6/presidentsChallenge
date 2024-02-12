@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #81689D;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -84,7 +84,7 @@ p {
 /* Home Page */
 
 .homepage-container {
-  text-align: center;
+  background-color: #81689D;
 }
 
 .header {
@@ -103,7 +103,8 @@ p {
 
 .form-container {
   max-width: 500px;
-  margin: 0 auto;
+  margin-top: 10%;
+  background-color: #474F7A;
 }
 
 .form-label {
@@ -130,10 +131,16 @@ p {
 .queue-container {
   max-width: 500px;
   margin: 0 auto;
+  background-color: #e6a4b4;
 }
 
 .queue-item {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   font-size: 1.2em;
+}
+
+/* Navbar */
+.nav_background {
+  background-color: #474F7A;
 }

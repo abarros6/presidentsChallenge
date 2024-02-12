@@ -3,8 +3,6 @@
     top: 0;
     width:100%;
     height:7vh;
-    /* background-image: linear-gradient(to right, rgb(71, 34, 34), rgb(97, 25, 25) ); */
-    background-color: white;
     margin:0px;
     position: fixed;
 }
@@ -33,9 +31,7 @@ li.navbar_list_items{
     height:60%;
     width: fit-content;
     padding:5px;
-    /* border:2px;
-    border-style: solid;
-    border-color: black; */
+    transition: background-color 0.3s, transform 0.3s;
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -43,7 +39,8 @@ li.navbar_list_items{
     border-radius: 5px;
 }
 li.navbar_list_items:hover {
-    background-color: rgba(56, 47, 47, 0.362);
+    background-color: #1F2544;
+    transform: scale(1.05);
 }
 
 li.navbar_list_items:last-of-type{
@@ -51,7 +48,8 @@ li.navbar_list_items:last-of-type{
 }
 
 .nav_link{
-    color:rgb(0, 0, 0) !important;
-    font-size: 1em;
+    color:white!important;
+    font-size: 1.1em;
     
 }
+

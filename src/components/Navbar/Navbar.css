@@ -6,8 +6,10 @@
     height:7vh;
     margin:0px;
     position: fixed;
-    
+    background-color: #474F7A;
 }
+
+  
 .nav_hidden {
     top: -50px; /* Move the navbar above the viewport */
     transition: top .5s;

@@ -15,17 +15,6 @@ h1.about_main_header{
     width:80%;
 }
 
-img.about_main_img{
-    height:40vh;
-    width: fit-content;
-    object-fit: contain;
-    margin-bottom:5px;
-    border-radius: 50%;
-    float:right;
-    shape-outside: circle(55%);
-    margin:10px;
-    
-}
 
 pre.about_description{
     white-space: pre-wrap;

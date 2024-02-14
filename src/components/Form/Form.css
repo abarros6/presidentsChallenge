@@ -60,3 +60,10 @@
     width: 100%;
     padding: 10px;
   }
+
+  .container { 
+    border:2px solid #ccc; 
+    width:500px; 
+    height: 100px; 
+    overflow-y: scroll; 
+}

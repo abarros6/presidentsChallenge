@@ -2,15 +2,38 @@ import React, { useState } from 'react';
 import './Form.css';
 
 const Form = () => {
+
+    // Arrays for symptoms and hospitals
+  const symptomsList = ['Fever', 'Cough', 'Headache', 'Fatigue', 'Shortness of breath'];
+  const hospitalsList = ['Hospital A', 'Hospital B', 'Hospital C', 'Hospital D', 'Hospital E'];
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    address: '',
     healthCardNo: '',
     age: '',
-    symptoms: '',
+    selectedHospital: '',
+    symptoms: [],
     medicalHistory: '',
   });
+
+    // Handle checkbox changes for symptoms
+    const handleCheckboxChange = (e) => {
+        const { name, checked } = e.target;
+    
+        setFormData((prevData) => ({
+          ...prevData,
+          symptoms: checked
+            ? [...prevData.symptoms, name]
+            : prevData.symptoms.filter((symptom) => symptom !== name),
+        }));
+      };
+    
+      // Handle dropdown change for hospitals
+      const handleDropdownChange = (e) => {
+        const { value } = e.target;
+        setFormData((prevData) => ({ ...prevData, selectedHospital: value }));
+      };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,16 +46,20 @@ const Form = () => {
     setFormData({
       firstName: '',
       lastName: '',
-      address: '',
       healthCardNo: '',
       age: '',
-      symptoms: '',
+      selectedHospital: '',
+      symptoms: [],
       medicalHistory: '',
     });
   };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
+
+
+
+
       <label htmlFor="firstName" className="form-label">
         First Name:
         <input
@@ -81,30 +108,38 @@ const Form = () => {
           required
         />
       </label>
-      <label htmlFor="hospital" className="form-label">
-        Choose a hospital:
-        <br></br>
-        <select id="hosp" name="hosp">
-            <option value="univ">University Hospital</option>
-            <option value="sj">St. Joseph's Hospital</option>
-            <option value="orange">Victoria Hospital</option>
-            <option value="grape">St. Thomas Elgin Memorial Hospital</option>
+      <label htmlFor="selectedHospital" className="form-label">
+        Select a Hospital:
+        <select
+          id="selectedHospital"
+          name="selectedHospital"
+          value={formData.selectedHospital}
+          onChange={handleDropdownChange}
+          className="form-dropdown"
+          required
+        >
+          <option value="" disabled>Select a hospital</option>
+          {hospitalsList.map((hospital) => (
+            <option key={hospital} value={hospital}>{hospital}</option>
+          ))}
         </select>
       </label>
       <label htmlFor="symptoms" className="form-label">
-        Symptoms: <br />
-        <div class= "container">
-              <input type="checkbox" /> Cough <br />
-              <input type="checkbox" /> Fever <br />
-              <input type="checkbox" /> Chest Pain <br />
-              <input type="checkbox" /> Diarrhea <br />
-              <input type="checkbox" /> Abdominal Pain <br />
-              <input type="checkbox" /> Headache <br />
-              <input type="checkbox" /> Weight Loss <br />
-              <input type="checkbox" /> Nausea <br />
-              <input type="checkbox" /> Vomiting <br />
-              <input type="checkbox" /> Confusion <br />
-              </div>
+        Symptoms:
+        <div>
+          {symptomsList.map((symptom) => (
+            <label key={symptom}>
+              <input
+                type="checkbox"
+                name={symptom}
+                checked={formData.symptoms.includes(symptom)}
+                onChange={handleCheckboxChange}
+                className="form-checkbox"
+              />
+              {symptom}
+            </label>
+          ))}
+        </div>
       </label>
       <label htmlFor="medicalHistory" className="form-label">
         Medical History:

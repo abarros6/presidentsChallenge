@@ -109,7 +109,7 @@ const Form = () => {
         />
       </label>
       <label htmlFor="selectedHospital" className="form-label">
-        Select a Hospital:
+        Hospital List: <br></br>
         <select
           id="selectedHospital"
           name="selectedHospital"
@@ -126,7 +126,7 @@ const Form = () => {
       </label>
       <label htmlFor="symptoms" className="form-label">
         Symptoms:
-        <div>
+        <div class="container">
           {symptomsList.map((symptom) => (
             <label key={symptom}>
               <input
@@ -135,8 +135,8 @@ const Form = () => {
                 checked={formData.symptoms.includes(symptom)}
                 onChange={handleCheckboxChange}
                 className="form-checkbox"
-              />
-              {symptom}
+              /> 
+              {symptom}<br></br>
             </label>
           ))}
         </div>

@@ -26,7 +26,7 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #FFD0EC;
+    background-color: #81689D;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -35,7 +35,7 @@
   }
   
   .submit-button:hover {
-    background-color: #81689D;
+    background-color: #FFD0EC;
   }
 
   .form-container {

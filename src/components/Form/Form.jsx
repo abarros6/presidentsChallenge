@@ -151,7 +151,7 @@ const Form = () => {
           className="form-textarea"
         />
       </label>
-      <button type="submit" className="submit-button">Enter Queue</button>
+      <button type="submit" className="submit-button">Submit</button>
     </form>
   );
 };

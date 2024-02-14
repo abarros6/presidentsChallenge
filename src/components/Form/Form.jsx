@@ -4,17 +4,15 @@ import './Form.css';
 const Form = () => {
 
     // Arrays for symptoms and hospitals
-  const symptomsList = ['Fever', 'Cough', 'Headache', 'Fatigue', 'Shortness of breath'];
-  const hospitalsList = ['Hospital A', 'Hospital B', 'Hospital C', 'Hospital D', 'Hospital E'];
+  const symptomsList = ['Fever', 'Cough', 'Headache', 'Fatigue', 'Shortness of breath', 'Diarrhea - No dehydration', 'Sore throat'];
+  const hospitalsList = ['University Hospital', 'Victoria Hospital', "Children's Hospital"];
 
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     healthCardNo: '',
-    age: '',
     selectedHospital: '',
     symptoms: [],
-    medicalHistory: '',
   });
 
     // Handle checkbox changes for symptoms
@@ -47,10 +45,8 @@ const Form = () => {
       firstName: '',
       lastName: '',
       healthCardNo: '',
-      age: '',
       selectedHospital: '',
       symptoms: [],
-      medicalHistory: '',
     });
   };
 
@@ -96,18 +92,6 @@ const Form = () => {
           required
         />
       </label>
-      <label htmlFor="age" className="form-label">
-        Age:
-        <input
-          type="number"
-          id="age"
-          name="age"
-          value={formData.age}
-          onChange={handleChange}
-          className="form-input"
-          required
-        />
-      </label>
       <label htmlFor="selectedHospital" className="form-label">
         Hospital List: <br></br>
         <select
@@ -141,16 +125,7 @@ const Form = () => {
           ))}
         </div>
       </label>
-      <label htmlFor="medicalHistory" className="form-label">
-        Medical History:
-        <textarea
-          id="medicalHistory"
-          name="medicalHistory"
-          value={formData.medicalHistory}
-          onChange={handleChange}
-          className="form-textarea"
-        />
-      </label>
+      
       <button type="submit" className="submit-button">Submit</button>
     </form>
   );

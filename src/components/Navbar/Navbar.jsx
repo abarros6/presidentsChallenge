@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './Navbar.css'
 import { NavLink } from 'react-router-dom'
-
-
+import Logo from '../../Assets/Logo.svg'
 
 const Navbar = () => {
 
@@ -26,9 +25,9 @@ const Navbar = () => {
         <div className={`nav_background ${isHidden ? 'nav_hidden' : ''}`}>
             <div className='nav_container'>
                 <ul className='navbar_list'>
-                    <li className='navbar_list_items'>
+                    {/* <li className='navbar_list_items'>
                         <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/">Home</NavLink>
-                    </li>
+                    </li> */}
                     <li className='navbar_list_items'>
                         <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/Form">Form</NavLink>
                     </li>
@@ -37,6 +36,11 @@ const Navbar = () => {
                     </li>
                     <li className='navbar_list_items'>
                         <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/About">About</NavLink>
+                    </li>
+                    <li className='navbar_image'>
+                        <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/">
+                            <img src={Logo} alt="Logo" style={{width: "100px", height: "auto"}} className='logo'/>
+                        </NavLink>
                     </li>
                 </ul>
                 

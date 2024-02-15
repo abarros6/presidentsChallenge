@@ -1,32 +1,26 @@
 /* Main container */
 .homepage-container {
-    margin-top: 7vh; /* Adjust according to navbar height */
-    padding: 20px;
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #81689D;
-    
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
   }
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
+
+  h1.home_main_header{
+    font-size: 2.5em;
+    margin-bottom: 0px;
   }
-  
-  .header h1 {
-    font-size: 3.2em; /* Adjusted size */
-    line-height: 1.1;
+
+
+  .description_container{
+    width:80%;
   }
-  
-  .header p {
-    font-size: 1.2em;
-  }
-  
-  /* Placeholder text */
-  .placeholder-text {
-    text-align: center;
-    margin-bottom: 30px; /* Added margin for spacing */
+
+  pre.description{
+    white-space: pre-wrap;
+    text-align: justify;
+    font-size: 1.3em;
   }
   
   /* Queue form */
@@ -34,16 +28,6 @@
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
-  }
-  
-  .queue-form input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid transparent; /* Removed border color */
-    background-color: #1a1a1a; /* Added background color */
-    color: rgba(255, 255, 255, 0.87); /* Added text color */
   }
 
   .queue-form button {

@@ -9,6 +9,10 @@
     background-color: #474F7A;
 }
 
+.logo:hover{ 
+    transform: scale(1.1);
+}
+
   
 .nav_hidden {
     top: -50px; /* Move the navbar above the viewport */
@@ -30,6 +34,17 @@ ul.navbar_list{
     padding-top: 5px;
     height:100%;
     width:100%;
+}
+
+.navbar_image {
+    padding:5px;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%; 
+    height: auto;
+    margin-left: auto;
 }
 
 
@@ -58,6 +73,5 @@ li.navbar_list_items:last-of-type{
 .nav_link{
     color:white!important;
     font-size: 1.1em;
-    
 }
 

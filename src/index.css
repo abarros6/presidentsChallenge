@@ -13,6 +13,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* RESET */
+
 /*  
 color pallette 
 https://colorhunt.co/palette/1f2544474f7a81689dffd0ec

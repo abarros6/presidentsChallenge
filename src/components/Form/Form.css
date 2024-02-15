@@ -1,69 +1,103 @@
 /* Form.css */
 
-.form-container {
-    max-width: fit-content;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    /* text-align: center; */
-  }
-  
-  .form-input,
-  .form-textarea {
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-
-  .submit-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #81689D;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .submit-button:hover {
-    background-color: #FFD0EC;
-  }
-
-  .form-container {
-    max-width: 500px;
-    margin-top: 10%;
-    background-color: #474F7A;
-  }
-  
-  .form-label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .form-input,
-  .form-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
-  .submit-button {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .container { 
-    border:2px solid #ccc; 
-    width:500px; 
-    height: 100px; 
-    overflow-y: scroll; 
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #474F7A;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  margin-top:10%;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
+
+.submit-button:hover {
+  background-color: #1F2544;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.form-label{
+  margin-top: 1%;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.select {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: auto;
+  height: 100px; 
+  overflow-y: scroll; 
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  margin-top: 5%;
+}
+
+.form-checkbox {
+  background-color: #ffffff;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.card select,
+.card input[type="text"],
+.card textarea {
+  border: none;
+  border-bottom: 1px solid #ffffff; /* White underline */
+  background-color: transparent; /* Transparent background */
+  padding: 5px 0; /* Adjust padding as needed */
+  width: 100%; /* Make input fields fill the width of the card */
+  margin-bottom: 10px; /* Add some space between input fields */
+  color: #ffffff; /* Text color */
+  font-size: 16px; /* Font size */
+}
+
+/* form component css */
+
+.card-form-container {
+  height:fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.card {
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Adjust width as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+}
+
+/* /////////////////////////////// */
+

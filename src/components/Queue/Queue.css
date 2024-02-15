@@ -8,6 +8,7 @@
 
 h1.main-header{
   font-size: 2.5em;
+  margin-bottom:0;
 }
 
 .input-container {
@@ -21,40 +22,20 @@ input[type="text"] {
 }
 
 button {
-  padding: 5px 10px;
+  padding: 10px 20px;
   background-color: #474F7A;
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: 3px;
+  font-size: 2em;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
   background-color: #1F2544;
+  transform: scale(1.05);
 }
-
-/* .queue-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.queue-item {
-  background-color: #f0f0f0;
-  margin-bottom: 5px;
-  border-radius: 3px;
-  color: black;
-  text-align: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  transition: background-color 0.3s;
-  padding: 10px;
-  font-size: 1.2em;
-}
-
-
-.queue-item:last-child {
-  margin-bottom: 0;
-} */
 
 /* CARD CSS */
 .card-container{
@@ -66,7 +47,7 @@ button:hover {
 }
 
 .card {
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   border-radius: 8px;
   padding: 20px;
   margin: 10px;
@@ -99,4 +80,13 @@ button:hover {
   margin: auto;
   margin-top: 10%;
   margin-bottom: 10%;
+}
+
+.queue-button-container {
+  justify-content: space-between;
+  width: 50%;
+  display: flex;
+  height:fit-content;
+  flex-direction: row;
+  align-items: center;
 }

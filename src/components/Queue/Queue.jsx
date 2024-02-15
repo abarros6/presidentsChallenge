@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import './Queue.css'
 
+const formatTime = (minutes) => {
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+  return `${hours}h ${remainingMinutes}m`;
+};
+
+const Card = ({ title, height = 400, width = 400, data, time, position }) => {
+  const formattedTime = formatTime(time);
+  const formattedPosition = position ? `Position: ${position}` : null;
+
+  return (
+    <div className="card" style={{ height: `${height}px`, width: `${width}px` }}>
+      <h2 className="card-title">{title}</h2>
+      <p className="card-content">{data}</p>
+      {time && <p className="card-time">{formattedTime}</p>}
+      {formattedPosition && <p className="card-position">{formattedPosition}</p>}
+    </div>
+  );
+};
+
 const Queue = () => {
   const [queue, setQueue] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -21,9 +41,21 @@ const Queue = () => {
   };
 
   return (
-    <div className="queue-container">
-      <h2>Queue Visualization</h2>
-      <div className="input-container">
+    <div className="queue-page-container">
+      <h1 className='main-header'>Queue</h1>
+      <div className='card-container'>
+        <Card 
+          title = {"Time"}
+          data = {"Roughly 30 minutes before your turn. Please try to arrive around 15 minutes early"}
+          time = {30}
+        />
+        <Card 
+          title = {"Position"}
+          data = {"There are 12 people ahead of you."}
+          position = {13}
+        />
+      </div>
+      {/* <div className="input-container">
         <input
           type="text"
           value={inputValue}
@@ -39,7 +71,7 @@ const Queue = () => {
             <li key={index} className="queue-item">{item}</li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

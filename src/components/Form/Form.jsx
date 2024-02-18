@@ -49,7 +49,7 @@ const Form = ({isFormComplete, setIsFormComplete}) => {
   return (
     <div className={"main-container"}>
       <h1 className='main-header'>Form</h1>
-        <form className="card" >
+        <form className="card align-inititial" >
           <label htmlFor="firstName" className="form-label">
             First Name:
             <input

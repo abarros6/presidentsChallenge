@@ -30,9 +30,8 @@ body {
   overflow-y: auto;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
-  height: 100vh;
   margin: 0;
-  padding-bottom: 20vh; /* Add some padding to ensure scrolling space at the bottom */
+  padding-bottom: 7vh; /* Add some padding to ensure scrolling space at the bottom */
 }
 
 body::-webkit-scrollbar {
@@ -46,6 +45,11 @@ a {
 }
 a:hover {
   color: #535bf2;
+}
+
+hr{
+  background-color: $color-dark;
+  width: 80%;
 }
 
 p,h1,h2{
@@ -112,4 +116,30 @@ button:hover {
   white-space: pre-wrap;
   text-align: justify;
   font-size: 1.3em;
+}
+
+//card
+
+.card {
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card select,
+.card input[type="text"],
+.card textarea {
+  border: none;
+  border-bottom: 1px solid white; /* White underline */
+  background-color: transparent; /* Transparent background */
+  padding: 5px 0; /* Adjust padding as needed */
+  width: 100%; /* Make input fields fill the width of the card */
+  margin-bottom: 10px; /* Add some space between input fields */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
 }

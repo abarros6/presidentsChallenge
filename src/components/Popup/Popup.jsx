@@ -1,13 +1,9 @@
-import React, { useState } from "react";
-import "./Popup.css";
+import React from "react";
+import "./Popup.scss";
 
 export default function Popup({popupButtonOnClick, togglePopup, popup, setPopup, popupTitle, popupText}) {
-
-
-
   return (
     <>
-
       {popup && (
         <div className="popup">
           <div className="overlay"></div>
@@ -16,10 +12,10 @@ export default function Popup({popupButtonOnClick, togglePopup, popup, setPopup,
             <p>
               {popupText}
             </p>
-            <button onClick={togglePopup}>
+            <button className="popup-button" onClick={togglePopup}>
               Cancel
             </button>
-            <button onClick={popupButtonOnClick}>
+            <button className="popup-button" onClick={popupButtonOnClick}>
               Confirm
             </button>
           </div>

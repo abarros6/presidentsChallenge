@@ -31,29 +31,9 @@
   background-color: white;
 }
 
-.card select,
-.card input[type="text"],
-.card textarea {
-  border: none;
-  border-bottom: 1px solid white; /* White underline */
-  background-color: transparent; /* Transparent background */
-  padding: 5px 0; /* Adjust padding as needed */
-  width: 100%; /* Make input fields fill the width of the card */
-  margin-bottom: 10px; /* Add some space between input fields */
-  color: white; /* Text color */
-  font-size: 16px; /* Font size */
-}
-
 /* form component css */
 
-.card {
-  border: 1px solid white;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
+.align-inititial{
   align-items: initial;
 }
 

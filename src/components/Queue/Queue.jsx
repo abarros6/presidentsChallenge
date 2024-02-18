@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Queue.scss'
 import Popup from '../Popup/Popup';
 import { useNavigate } from 'react-router-dom';
+import FormCat from '../../Assets/FormCat.png'
 
 const formatTime = (minutes) => {
   const hours = Math.floor(minutes / 60);
@@ -14,7 +15,7 @@ const Card = ({ title, height = 400, width = 400, data, time, position }) => {
   const formattedPosition = position ? `Position: ${position}` : null;
 
   return (
-    <div className="card" style={{ height: `${height}px`, width: `${width}px` }}>
+    <div className="card align-center" style={{ height: `${height}px`, width: `${width}px` }}>
       <h2 className="card-title">{title}</h2>
       <p className="card-content">{data}</p>
       {time && <p className="card-time">{formattedTime}</p>}
@@ -47,12 +48,6 @@ const Queue = ({isFormComplete, setIsFormComplete}) => {
     //handle logic of removing user from actual queue data, then set form data and redirect
     setIsFormComplete(false)
     navigate('/');
-  }
-
-  if(popup) {
-    document.body.classList.add('active-popup')
-  } else {
-    document.body.classList.remove('active-popup')
   }
 
   return (
@@ -92,11 +87,14 @@ const Queue = ({isFormComplete, setIsFormComplete}) => {
       {
         !isFormComplete &&
         <div className='main-container'>
+          <h1 className='main-header'>You need to complete the form.</h1>
+          <hr></hr>
+          <img src={FormCat}/>
           <Card 
             title = {"Form Incomplete"}
             data = {incompleteText}
-            height={600}
-            width ={500}
+            height={200}
+            width ={800}
           />
         </div>
       }

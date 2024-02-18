@@ -36,7 +36,7 @@ const Navbar = () => {
                     </li>
                     <li className='navbar_image'>
                         <NavLink style={{"text-decoration": "none"}} className="nav_link" to="/">
-                            <img src={Logo} alt="Logo" style={{width: "100px", height: "auto"}} className='logo'/>
+                            <img src={Logo} alt="Logo" style={{width: "6vh", height: "auto"}} className='logo'/>
                         </NavLink>
                     </li>
                 </ul>

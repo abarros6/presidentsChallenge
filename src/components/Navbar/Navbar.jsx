@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import './Navbar.css'
+import './Navbar.scss'
 import { NavLink } from 'react-router-dom'
 import Logo from '../../Assets/Logo.svg'
 

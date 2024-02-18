@@ -1,25 +1,19 @@
-import React,{useState, useEffect }from 'react'
-import './About.css'
-
-
+import React from 'react'
+import './About.scss'
 
 function About() {
 
-    const [About_text, set_About_text] = useState("")
-
   return (
-    <div className='about_main_container'>
-        <h1 className='about_main_header'>
+    <div className='main-container'>
+        <h1 className='main-header'>
             About
         </h1>
-        <h2 className='about_main_subheader'>
+        <h2>
             Our Mission
         </h2>
 
-        
-        
-        <div className='about_subcontainer1'>
-            <pre className='about_description'>
+        <div className='text-container'>
+            <pre className='text-format'>
                 
                 <p>Our team’s proposal is an app which would allow non-acute patients in Ontario to queue for emergency service at home. 
                     The app would have patients describe their symptoms, provide their location and health card number, and then queue them to be seen at an emergency room so that they can show up shortly before a physician is projected to be available. 
@@ -43,10 +37,6 @@ function About() {
 
             </pre>
         </div>
-        <h2 className='about_main_subheader'>
-            
-        </h2>
-
     </div>
   )
 }

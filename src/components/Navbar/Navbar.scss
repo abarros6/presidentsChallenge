@@ -1,3 +1,5 @@
+@import '../../globals.scss';
+
 .nav_background{
     position: fixed;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Add a small shadow */
@@ -6,7 +8,7 @@
     height:7vh;
     margin:0px;
     position: fixed;
-    background-color: #474F7A;
+    background-color: $color-less-dark;
 }
 
 .logo:hover{ 
@@ -57,7 +59,7 @@ li.navbar_list_items{
     border-radius: 5px;
 }
 li.navbar_list_items:hover {
-    background-color: #1F2544;
+    background-color: $color-dark;
     transform: scale(1.05);
 }
 li.navbar_list_items:last-of-type{

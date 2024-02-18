@@ -1,44 +1,19 @@
-/* Form.css */
-
 .submit-button {
   display: block;
   width: 100%;
-  padding: 10px;
-  background-color: #474F7A;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
   margin-top:10%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-h1.main-header{
-  font-size: 2.5em;
-  margin-bottom:0;
-}
-
-.submit-button:hover {
-  background-color: #1F2544;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
 }
 
 .form-label{
   margin-top: 1%;
-  color: #ffffff;
+  color: white;
   font-weight: bold;
 }
 
 .select {
   appearance: none;
   background-color: transparent;
-  border: 1px solid #ffffff;
+  border: 1px solid white;
   border-radius: 8px;
   padding: 0 1em 0 0;
   margin: 0;
@@ -53,52 +28,30 @@ button:focus {
 }
 
 .form-checkbox {
-  background-color: #ffffff;
-}
-
-input[type="checkbox"]::before {
-  content: "";
-  width: 0.65em;
-  height: 0.65em;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--form-control-color);
-}
-
-input[type="checkbox"]:checked::before {
-  transform: scale(1);
+  background-color: white;
 }
 
 .card select,
 .card input[type="text"],
 .card textarea {
   border: none;
-  border-bottom: 1px solid #ffffff; /* White underline */
+  border-bottom: 1px solid white; /* White underline */
   background-color: transparent; /* Transparent background */
   padding: 5px 0; /* Adjust padding as needed */
   width: 100%; /* Make input fields fill the width of the card */
   margin-bottom: 10px; /* Add some space between input fields */
-  color: #ffffff; /* Text color */
+  color: white; /* Text color */
   font-size: 16px; /* Font size */
 }
 
 /* form component css */
 
-.card-form-container {
-  height:fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 7vh;
-}
-
 .card {
-  border: 1px solid #ffffff;
+  border: 1px solid white;
   border-radius: 8px;
   padding: 20px;
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 400px; /* Adjust width as needed */
   display: flex;
   flex-direction: column;
   align-items: initial;

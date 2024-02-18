@@ -48,6 +48,7 @@ const Form = ({isFormComplete, setIsFormComplete}) => {
 
   return (
     <div className={"card-form-container"}>
+      <h1 className='main-header'>Form</h1>
         <form className="card" >
           <label htmlFor="firstName" className="form-label">
             First Name:

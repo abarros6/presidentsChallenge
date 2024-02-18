@@ -49,23 +49,17 @@ ul.navbar_list{
 
 
 li.navbar_list_items{
-    color: black;
     font-size: 1.2em; 
-    height:60%;
+    height: fit-content;
     width: fit-content;
     padding:5px;
     transition: background-color 0.3s, transform 0.3s;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     border-radius: 5px;
 }
 li.navbar_list_items:hover {
     background-color: #1F2544;
     transform: scale(1.05);
 }
-
 li.navbar_list_items:last-of-type{
     margin-left:auto;
 }

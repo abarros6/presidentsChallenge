@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.scss'
 
 import Navbar from './components/Navbar/Navbar.jsx'
-import Footer from './components/footer/Footer.jsx'
+import Footer from './components/Footer/Footer.jsx'
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 

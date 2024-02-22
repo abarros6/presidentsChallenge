@@ -1,8 +1,30 @@
 import React, { useState } from 'react';
 import './Form.scss';
 import { useNavigate } from 'react-router-dom';
+import Popup from '../Popup/Popup';
 
-const Form = ({isFormComplete, setIsFormComplete}) => {
+const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
+
+  function initValues(numValues) {
+    const values = new Array(numValues);
+    // fill the array with each value
+    for (let i = 0; i < values.length; i++) {
+        values[i] = i;
+    }
+    return values;
+  }
+
+  function getValue(array) {
+      if (!array.length) {
+          throw new Error("array is empty, no more random values");
+      }
+      const i = Math.floor(Math.random() * array.length);
+      const returnVal = array[i];
+      array.splice(i, 1);
+      return returnVal;
+  }
+
+  const idPool = initValues(9999)//4-digit number code 
 
   const navigate = useNavigate();
 
@@ -10,116 +32,157 @@ const Form = ({isFormComplete, setIsFormComplete}) => {
   const symptomsList = ['Fever', 'Cough', 'Headache', 'Fatigue', 'Shortness of breath', 'Diarrhea - No dehydration', 'Sore throat'];
   const hospitalsList = ['University Hospital', 'Victoria Hospital', "Children's Hospital"];
 
+  const [popup, setPopup] = useState(false)
+
+  const togglePopup = () => {
+    setPopup(!popup);
+  };
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     healthCardNo: '',
-    selectedHospital: '',
+    hospital: '',
     symptoms: [],
+    id: getValue(idPool),
   });
 
-    // Handle checkbox changes for symptoms
-    const handleCheckboxChange = (e) => {
-        const { name, checked } = e.target;
-    
-        setFormData((prevData) => ({
-          ...prevData,
-          symptoms: checked
-            ? [...prevData.symptoms, name]
-            : prevData.symptoms.filter((symptom) => symptom !== name),
-        }));
-      };
-    
-      // Handle dropdown change for hospitals
-      const handleDropdownChange = (e) => {
-        const { value } = e.target;
-        setFormData((prevData) => ({ ...prevData, selectedHospital: value }));
-      };
+  async function enterQueue(data) {
+    const res = await fetch('/api/patients', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        data
+      })
+    })
+      return res.json()
+  }
+
+  const popupButtonOnClick = async e => {
+    e.preventDefault();
+    enterQueue(formData).then((data) => {
+      if (data.success) {
+          setIsFormComplete(true)
+          setCode(formData.id)
+          navigate('/Queue');
+      }
+    })
+  };
+
+  // Handle checkbox changes for symptoms
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      symptoms: checked
+        ? [...prevData.symptoms, name]
+        : prevData.symptoms.filter((symptom) => symptom !== name),
+    }));
+  };
+
+  // Handle dropdown change for hospitals
+  const handleDropdownChange = (e) => {
+    const { value } = e.target;
+    setFormData((prevData) => ({ ...prevData, hospital: value }));
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    setIsFormComplete(true)
-    navigate('/Queue');
-  };
-
   return (
-    <div className={"main-container"}>
-      <h1 className='main-header'>Form</h1>
-        <form className="card align-inititial" >
-          <label htmlFor="firstName" className="form-label">
-            First Name:
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label htmlFor="lastName" className="form-label">
-            Last Name:
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label htmlFor="healthCardNo" className="form-label">
-            Health Card Number:
-            <input
-              type="text"
-              id="healthCardNo"
-              name="healthCardNo"
-              value={formData.healthCardNo}
-              onChange={handleChange}
-              required
-            />
-          </label>
-          <label htmlFor="selectedHospital" className="form-label">
-            Hospital List: 
-            <select
-              id="selectedHospital"
-              name="selectedHospital"
-              value={formData.selectedHospital}
-              onChange={handleDropdownChange}
-              className="form-dropdown"
-              required
-            >
-              <option value="" disabled>Select a hospital</option>
-              {hospitalsList.map((hospital) => (
-                <option key={hospital} value={hospital}>{hospital}</option>
-              ))}
-            </select>
-          </label>
-          <label htmlFor="symptoms" className="form-label">
-            Symptoms:
-            <div class="select">
-              {symptomsList.map((symptom) => (
-                <label key={symptom}>
-                  <input
-                    type="checkbox"
-                    name={symptom}
-                    checked={formData.symptoms.includes(symptom)}
-                    onChange={handleCheckboxChange}
-                    className="form-checkbox"
-                  /> 
-                  {symptom}<br></br>
-                </label>
-              ))}
-            </div>
-          </label>
-          
-          <button onClick={handleSubmit} className="submit-button">Submit</button>
-        </form>
-    </div>
+    <>
+      {popup &&  
+        <Popup
+          popupButtonOnClick = {popupButtonOnClick}
+          togglePopup = {togglePopup}
+          popup={popup}
+          setPopup={setPopup}
+          popupTitle={"Record your code to enter the queue in case you leave."}
+          popupText={`your unique code is ${formData.id}`}
+        />
+      }
+      {
+        !popup &&
+        <div className={"main-container"}>
+          <h1 className='main-header'>Form</h1>
+            <form className="card align-inititial" >
+              <label htmlFor="firstName" className="form-label">
+                First Name:
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <label htmlFor="lastName" className="form-label">
+                Last Name:
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <label htmlFor="healthCardNo" className="form-label">
+                Health Card Number:
+                <input
+                  type="text"
+                  id="healthCardNo"
+                  name="healthCardNo"
+                  value={formData.healthCardNo}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <label htmlFor="hospital" className="form-label">
+                Hospital List: 
+                <select
+                  id="hospital"
+                  name="hospital"
+                  value={formData.hospital}
+                  onChange={handleDropdownChange}
+                  className="form-dropdown"
+                  required
+                >
+                  <option value="" disabled>Select a hospital</option>
+                  {hospitalsList.map((hospital) => (
+                    <option key={hospital} value={hospital}>{hospital}</option>
+                  ))}
+                </select>
+              </label>
+              <label htmlFor="symptoms" className="form-label">
+                Symptoms:
+                <div class="select">
+                  {symptomsList.map((symptom) => (
+                    <label key={symptom}>
+                      <input
+                        type="checkbox"
+                        name={symptom}
+                        checked={formData.symptoms.includes(symptom)}
+                        onChange={handleCheckboxChange}
+                        className="form-checkbox"
+                      /> 
+                      {symptom}<br></br>
+                    </label>
+                  ))}
+                </div>
+              </label>
+              
+              <button onClick={togglePopup} className="submit-button">Submit</button>
+            </form>
+        </div>
+      }
+    </>
   );
 };
 

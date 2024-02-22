@@ -118,6 +118,12 @@ button:hover {
   font-size: 1.3em;
 }
 
+.form-label{
+  margin-top: 1%;
+  color: white;
+  font-weight: bold;
+}
+
 //card
 
 .card {
@@ -131,6 +137,7 @@ button:hover {
   justify-content: center;
 }
 
+.code-input,
 .card select,
 .card input[type="text"],
 .card textarea {

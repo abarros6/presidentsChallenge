@@ -8,7 +8,7 @@
 ### pages
 - maybe need some sort of location tracking question to facilitate this **must have**
 - this may be easier to implement with pwa related features 
-- queue needs location information
+- QUEUE POSITION INFO IS NOT PRESENT ON COMPONENT MOUNT BUT AVAILABLE ON REFRESH, NEED TO FIX
 
 ### backend 
 **currently all backend tasks are tabled**

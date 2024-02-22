@@ -4,14 +4,15 @@ import Popup from '../Popup/Popup';
 import { useNavigate } from 'react-router-dom';
 import FormCat from '../../Assets/FormCat.png'
 
-const Card = ({ title, height = '400px', width = '400px', position, positionData, locationData }) => {
-  const formattedPosition = position ? `Position: ${position}` : null;
+const Card = ({ title, height = '400px', width = '400px', codeData, position, positionData, locationData }) => {
+  const formattedPosition = position ? `Position: ${position + 1}` : null;
 
   return (
     <div className="card align-center" style={{ height: `${height}`, width: `${width}` }}>
       <h2 className="card-title">{title}</h2>
       <p className="card-content">{positionData}</p>
       <p className="card-content">{locationData}</p>
+      <p className="card-position">{codeData}</p>
       {formattedPosition && <p className="card-position">{formattedPosition}</p>}
     </div>
   );
@@ -19,15 +20,25 @@ const Card = ({ title, height = '400px', width = '400px', position, positionData
 
 const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   const navigate = useNavigate();
-
-  const [position, setPosition] = useState(12);
-  const [popup, setPopup] = useState(false)
   const [patientList, setPatientList] = useState({});
 
-  const positionText = `There are ${position -1} people ahead of you.`
-  const locationText = `You will be going to University Hospital`
-  const incompleteText = `Please return to the home page to complete the form. The form must be complete to enter the queue`
+  const [position, setPosition] = useState(0);
+  const [popup, setPopup] = useState(false)
 
+  const positionText = `There are ${position} people ahead of you.`
+  const locationText = `You will be going to University Hospital`
+  const codeText =`Re-entry code: ${code}`
+
+  let initPosition = () => {
+    let totalPatients = Object.keys(patientList).length
+    //use the code to determine the queue position of the current user
+    for (let i = 0; i < totalPatients; i++) {
+      if (patientList[i.toString()].id == code) {
+        return i
+      }
+    }
+  }
+  
   useEffect(() => {
     //set the queue list on mount to get the info for the current patient
     getQueueOnClick()
@@ -72,6 +83,7 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
     getQueue().then((data) => {
       if (data.success) {
         setPatientList(data.patients)
+        setPosition(initPosition())
       }
     })
   };
@@ -102,6 +114,7 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
               title = {"Info"}
               positionData = {positionText}
               locationData={locationText}
+              codeData={codeText}
               position = {position}
               height = {"auto"}
             />
@@ -128,12 +141,7 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
           <h1 className='main-header'>You need to complete the form.</h1>
           <hr></hr>
           <img src={FormCat}/>
-          <Card 
-            title = {"Form Incomplete"}
-            data = {incompleteText}
-            height={200}
-            width ={800}
-          />
+          <hr></hr>
         </div>
       }
     </>

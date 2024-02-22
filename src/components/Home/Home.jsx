@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Home = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   const navigate = useNavigate();
-  const [sessionToken, setSessionToken] = useState(0) 
+  const [sessionToken, setSessionToken] = useState('') 
 
   async function checkId(data) {
     const res = await fetch('/api/verify', {

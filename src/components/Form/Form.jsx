@@ -29,7 +29,8 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   const navigate = useNavigate();
 
     // Arrays for symptoms and hospitals
-  const symptomsList = ['Fever', 'Cough', 'Headache', 'Fatigue', 'Shortness of breath', 'Diarrhea - No dehydration', 'Sore throat'];
+  const symptomsList = ['Hypertension with no symptoms', 'Mild burn', 'Constipation - Mild pain', 'Minor trauma wounds', 'Mild anxiety/agitation',
+   'Shortness of breath', 'Diarrhea - No dehydration', 'Sore throat', 'Minor vaginal bleeding/spotting - Not pregnant'];
   const hospitalsList = ['University Hospital', 'Victoria Hospital', "Children's Hospital"];
 
   const [popup, setPopup] = useState(false)

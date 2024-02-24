@@ -24,6 +24,16 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
       return returnVal;
   }
 
+  function handleFormSubmit(e){
+    e.preventDefault();
+  if (!formData.firstName || !formData.lastName || !formData.healthCardNo || !formData.hospital || formData.symptoms.length === 0) {
+    alert('Please fill in all required fields');
+    return;
+  }else{
+    togglePopup();
+  }
+  }
+
   const idPool = initValues(9999)//4-digit number code 
 
   const navigate = useNavigate();
@@ -179,7 +189,7 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
                 </div>
               </label>
               
-              <button onClick={togglePopup} className="submit-button">Submit</button>
+              <button onClick={handleFormSubmit} className="submit-button">Submit</button>
             </form>
         </div>
       }

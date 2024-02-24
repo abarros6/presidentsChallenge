@@ -55,8 +55,7 @@ const Home = ({code, setCode, isFormComplete, setIsFormComplete}) => {
       <div className='text-container'>
         <pre className='text-format'>
           <p>Get in line before you arrive at the hospital by just answering a few questions, and wait at home until a phsyician can assess you.
-          If you are experiencing an urgent medical problem go directly to an emergency room. </p>
-          <p>By using this service you acknowledge that COMPANY NAME is not responsible for any healthcare you may or may not receive.</p>
+          If you are experiencing an urgent medical problem go directly to an emergency room or call 911. </p>
         </pre>
         <button onClick={handleClick}>Join Queue</button> 
       </div>

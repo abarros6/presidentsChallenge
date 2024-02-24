@@ -1,5 +1,6 @@
 import React from 'react'
 import './About.scss'
+import Loader from '../Loader/Loader'; // Adjust the import path based on your project structure
 
 function About() {
 

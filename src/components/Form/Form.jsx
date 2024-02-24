@@ -27,7 +27,7 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   function handleFormSubmit(e){
     e.preventDefault();
   if (!formData.firstName || !formData.lastName || !formData.healthCardNo || !formData.hospital || formData.symptoms.length === 0) {
-    alert('Please fill in all required fields');
+    toggleWarning();
     return;
   }else{
     togglePopup();
@@ -44,6 +44,12 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   const hospitalsList = ['University Hospital', 'Victoria Hospital', "Children's Hospital"];
 
   const [popup, setPopup] = useState(false)
+
+  const [warning, setWarning] = useState(false)
+
+  const toggleWarning = () => {
+    setWarning(!warning);
+  };
 
   const togglePopup = () => {
     setPopup(!popup);
@@ -107,7 +113,7 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
 
   return (
     <>
-      {popup &&  
+      {popup  &&
         <Popup
           popupButtonOnClick = {popupButtonOnClick}
           togglePopup = {togglePopup}
@@ -115,6 +121,18 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
           setPopup={setPopup}
           popupTitle={"Record your code to enter the queue in case you leave."}
           popupText={`your unique code is ${formData.id}`}
+          warning={false}
+        />
+      }
+      {warning &&
+        <Popup
+          popupButtonOnClick = {popupButtonOnClick}
+          togglePopup = {toggleWarning}
+          popup={warning}
+          setPopup={setPopup}
+          popupTitle={"Please complete all required fields"}
+          popupText={`your unique code is ${formData.id}`}
+          warning={true}
         />
       }
       {

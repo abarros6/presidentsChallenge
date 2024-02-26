@@ -26,12 +26,12 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
 
   function handleFormSubmit(e){
     e.preventDefault();
-  if (!formData.firstName || !formData.lastName || !formData.healthCardNo || !formData.hospital || formData.symptoms.length === 0) {
-    toggleWarning();
-    return;
-  }else{
-    togglePopup();
-  }
+    if (!formData.firstName || !formData.lastName || !formData.healthCardNo || !formData.hospital || formData.symptoms.length === 0) {
+      toggleWarning();
+      return;
+    }else{
+      togglePopup();
+    }
   }
 
   const idPool = initValues(9999)//4-digit number code 
@@ -41,7 +41,7 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
     // Arrays for symptoms and hospitals
   const symptomsList = ['Hypertension with no symptoms', 'Mild burn', 'Constipation - Mild pain', 'Minor trauma wounds', 'Mild anxiety/agitation',
    'Shortness of breath', 'Diarrhea - No dehydration', 'Sore throat', 'Minor vaginal bleeding/spotting - Not pregnant'];
-  const hospitalsList = ['University Hospital', 'Victoria Hospital', "Children's Hospital"];
+  const hospitalsList = ['University Hospital'];
 
   const [popup, setPopup] = useState(false)
 

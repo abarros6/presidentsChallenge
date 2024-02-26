@@ -4,7 +4,7 @@ import Popup from '../Popup/Popup';
 import { useNavigate } from 'react-router-dom';
 import FormCat from '../../Assets/FormCat.png'
 
-const Card = ({ title, height = '400px', width = '400px', codeData, position, positionData, locationData }) => {
+const Card = ({ title, height = '400px', width = '400px', codeData, position, positionData, locationData, symptoms }) => {
   const formattedPosition = position ? `Position: ${position + 1}` : null;
 
   return (
@@ -14,6 +14,11 @@ const Card = ({ title, height = '400px', width = '400px', codeData, position, po
       <p className="card-content">{locationData}</p>
       <p className="card-position">{codeData}</p>
       {formattedPosition && <p className="card-position">{formattedPosition}</p>}
+      <ul>
+        {symptoms?.map((symptom, index) => (
+          <li key={index}>{symptom}</li>
+        ))}
+      </ul>
     </div>
   );
 };
@@ -21,6 +26,7 @@ const Card = ({ title, height = '400px', width = '400px', codeData, position, po
 const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   const navigate = useNavigate();
   const [patientList, setPatientList] = useState({});
+  const [patient, setPatient] = useState({})
 
   const [position, setPosition] = useState(0);
   const [popup, setPopup] = useState(false)
@@ -34,18 +40,16 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
     //use the code to determine the queue position of the current user
     for (let i = 0; i < totalPatients; i++) {
       if (patientList[i.toString()].id == code) {
+        setPatient(patientList[i.toString()])
         return i
       }
     }
   }
   
   useEffect(() => {
-    //set the queue list on mount to get the info for the current patient
     getQueueOnClick()
-  }, [])
+  }, [patientList])
 
-  //right now i am just making the person in the first spot leave the queue
-  //i need to make the user with the current code leave the queue
   async function leaveQueue(id) {
     const res = await fetch('/api/leave', {
       method: 'POST',
@@ -91,7 +95,7 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
 
   const refreshQueue = () => {
     getQueueOnClick()
-    console.log(patientList)
+    console.log(patient)
   }
 
   const togglePopup = () => {
@@ -115,6 +119,7 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
               positionData = {positionText}
               locationData={locationText}
               codeData={codeText}
+              symptoms={patient.symptoms}
               position = {position}
               height = {"auto"}
             />

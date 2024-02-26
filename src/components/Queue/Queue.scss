@@ -23,7 +23,7 @@
   font-size: 1.3em;
 }
 
-.card-position{
+.card-position1{
   font-weight: bold;
   color: white;
   background-color: $color-less-dark;
@@ -32,8 +32,19 @@
   text-align: center;
   width: 50%;
   margin: auto;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 5%;
+}
+.card-position2{
+  font-weight: bold;
+  color: white;
+  background-color: $color-less-dark;
+  border-radius: 4px;
+  font-size: 2em;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .queue-button-container {

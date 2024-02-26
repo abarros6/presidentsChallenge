@@ -4,19 +4,19 @@ import Popup from '../Popup/Popup';
 import { useNavigate } from 'react-router-dom';
 import FormCat from '../../Assets/FormCat.png'
 
-const Card = ({ title, height = '400px', width = '400px', codeData, position, positionData, locationData, symptoms }) => {
+const Card = ({ title, height = 'auto', width = '55vh', codeData, position, symptoms }) => {
   const formattedPosition = position ? `Position: ${position + 1}` : null;
 
   return (
     <div className="card align-center" style={{ height: `${height}`, width: `${width}` }}>
       <h2 className="card-title">{title}</h2>
-      <p className="card-content">{positionData}</p>
-      <p className="card-content">{locationData}</p>
-      <p className="card-position">{codeData}</p>
-      {formattedPosition && <p className="card-position">{formattedPosition}</p>}
+      <p className="card-content">There are <b>{position}</b> people ahead of you. Please arrive at the hospital in <b>{position*15}</b> minutes.</p>
+      <p className="card-content">You will be going to <b>University Hospital</b></p>
+      <p className="card-position1">{codeData}</p>
+      {formattedPosition && <p className="card-position2">{formattedPosition}</p>}
       <ul>
         {symptoms?.map((symptom, index) => (
-          <li key={index}>{symptom}</li>
+          <li key={index}><b>{symptom}</b></li>
         ))}
       </ul>
     </div>
@@ -31,8 +31,6 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   const [position, setPosition] = useState(0);
   const [popup, setPopup] = useState(false)
 
-  const positionText = `There are ${position} people ahead of you. Please arrive at the hospital in ${position*15} minutes.`
-  const locationText = `You will be going to University Hospital`
   const codeText =`Re-entry code: ${code}`
 
   let initPosition = () => {
@@ -115,13 +113,10 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
               position = {position}
             /> */}
             <Card
-              title = {"Info"}
-              positionData = {positionText}
-              locationData={locationText}
+              title = {"Patient Info"}
               codeData={codeText}
               symptoms={patient.symptoms}
               position = {position}
-              height = {"auto"}
             />
           </div>
           <div className='queue-button-container'>

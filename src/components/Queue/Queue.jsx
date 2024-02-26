@@ -31,7 +31,7 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   const [position, setPosition] = useState(0);
   const [popup, setPopup] = useState(false)
 
-  const positionText = `There are ${position} people ahead of you.`
+  const positionText = `There are ${position} people ahead of you. Please arrive at the hospital in ${position*15} minutes.`
   const locationText = `You will be going to University Hospital`
   const codeText =`Re-entry code: ${code}`
 

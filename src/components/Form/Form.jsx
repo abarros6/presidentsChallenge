@@ -136,7 +136,7 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
         />
       }
       {
-        !popup &&
+        !popup && !warning &&
         <div className={"main-container"}>
           <h1 className='main-header'>Form</h1>
             <form className="card align-inititial" >

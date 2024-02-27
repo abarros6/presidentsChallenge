@@ -4,21 +4,21 @@ import Popup from '../Popup/Popup';
 import { useNavigate } from 'react-router-dom';
 import FormCat from '../../Assets/FormCat.png'
 
-const Card = ({ title, height = 'auto', width = '55vh', codeData, position, symptoms }) => {
+const Card = ({height = 'auto', width = '55vh', codeData, position, symptoms }) => {
   const formattedPosition = position ? `Position: ${position + 1}` : null;
 
   return (
     <div className="card align-center" style={{ height: `${height}`, width: `${width}` }}>
-      <h2 className="card-title">{title}</h2>
       <p className="card-content">There are <b>{position}</b> people ahead of you. Please arrive at the hospital in <b>{position*15 + 30}</b> minutes.</p>
       <p className="card-content">You will be going to <b>University Hospital</b></p>
-      <p className="card-position1">{codeData}</p>
-      {formattedPosition && <p className="card-position2">{formattedPosition}</p>}
+      <p className="card-content" style={{"position": "relative", "right": "15%"}}>Reason for your visit:</p>
       <ul>
         {symptoms?.map((symptom, index) => (
-          <li key={index}><b>{symptom}</b></li>
+          <li style={{"color": "black"}}key={index}><b>{symptom}</b></li>
         ))}
       </ul>
+      <p className="card-position1">{codeData}</p>
+      {formattedPosition && <p className="card-position2">{formattedPosition}</p>}
     </div>
   );
 };
@@ -103,9 +103,9 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   return (
     <>
       {
-        isFormComplete && 
+        isFormComplete && !popup &&
         <div className="main-container">
-          <h1 className='main-header'>Queue</h1>
+          <h1 className='main-header'>Patient Info</h1>
           <div className='card-container'>
             {/* <Card 
               title = {"Position"}
@@ -113,7 +113,6 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
               position = {position}
             /> */}
             <Card
-              title = {"Patient Info"}
               codeData={codeText}
               symptoms={patient.symptoms}
               position = {position}

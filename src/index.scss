@@ -6,8 +6,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: white;
-  background-color: white;
+  color: $main-white;
+  background-color: $main-white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -79,7 +79,7 @@ input[type="checkbox"]:checked::before {
 button {
   padding: 10px 20px;
   background-color: $color-less-dark;
-  color: white;
+  color: $main-white;
   border: none;
   font-size: 2em;
   border-radius: 5px;
@@ -95,7 +95,7 @@ button:hover {
 /* Global Classes */
 
 .main-container{
-  row-gap: 3vh; //vertical seperation between items in flex column 
+  //row-gap: 3vh; //vertical seperation between items in flex column 
   height:fit-content;
   display: flex;
   flex-direction: column;
@@ -144,7 +144,7 @@ button:hover {
 .card input[type="text"],
 .card textarea {
   border: none;
-  border-bottom: 1px solid black; /* White underline */
+  border-bottom: 1px solid black; /* $main-white underline */
   background-color: transparent; /* Transparent background */
   padding: 5px 0; /* Adjust padding as needed */
   width: 100%; /* Make input fields fill the width of the card */
@@ -167,5 +167,5 @@ button:hover {
   right: 0;
   margin: auto;
   transform: translateY(-50%);
-  color: white;
+  color: $main-white;
 }

@@ -1,3 +1,5 @@
+@import '../../globals.scss';
+
 .submit-button {
   display: block;
   width: 100%;
@@ -7,7 +9,7 @@
 .select {
   appearance: none;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid $main-white;
   border-radius: 8px;
   padding: 0 1em 0 0;
   margin: 0;
@@ -21,15 +23,6 @@
   margin-top: 5%;
 }
 
-.form-checkbox {
-  background-color: white;
-}
-
-/* form component css */
-
 .align-inititial{
   align-items: initial;
 }
-
-/* /////////////////////////////// */
-

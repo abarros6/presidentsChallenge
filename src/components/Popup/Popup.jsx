@@ -8,9 +8,9 @@ export default function Popup({popupButtonOnClick, togglePopup, popup, setPopup,
         <div className="popup">
           {/* <div className="overlay"></div> */}
           <div className="popup-content">
-            <h2>{popupTitle}</h2>
+            <h2 style={{"color": "white"}}>{popupTitle}</h2>
             {!warning && (
-            <p>
+            <p style={{"color": "white"}}>
               {popupText}
             </p>
             )}

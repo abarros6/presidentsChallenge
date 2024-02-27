@@ -53,7 +53,7 @@ const Home = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   };
 
   return (
-    <div className="main-container">
+    <div style={{"rowGap": "3vh"}}className="main-container">
       {/* <h1 className='main-header'>MediQueue</h1> */}
       <img src={Waiting} alt="waiting" className={'morrisette'} style={{width: "50%", height: "auto"}} />
       <div className='flex-row'>

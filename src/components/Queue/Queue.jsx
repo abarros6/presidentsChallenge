@@ -10,7 +10,7 @@ const Card = ({ title, height = 'auto', width = '55vh', codeData, position, symp
   return (
     <div className="card align-center" style={{ height: `${height}`, width: `${width}` }}>
       <h2 className="card-title">{title}</h2>
-      <p className="card-content">There are <b>{position}</b> people ahead of you. Please arrive at the hospital in <b>{position*15}</b> minutes.</p>
+      <p className="card-content">There are <b>{position}</b> people ahead of you. Please arrive at the hospital in <b>{position*15 + 30}</b> minutes.</p>
       <p className="card-content">You will be going to <b>University Hospital</b></p>
       <p className="card-position1">{codeData}</p>
       {formattedPosition && <p className="card-position2">{formattedPosition}</p>}

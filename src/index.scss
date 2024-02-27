@@ -7,7 +7,7 @@
 
   color-scheme: light dark;
   color: white;
-  background-color: $color-base;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -53,7 +53,7 @@ hr{
 }
 
 p,h1,h2{
-  color:white;
+  color:black;
 }
 
 input:focus,
@@ -95,6 +95,7 @@ button:hover {
 /* Global Classes */
 
 .main-container{
+  row-gap: 3vh; //vertical seperation between items in flex column 
   height:fit-content;
   display: flex;
   flex-direction: column;
@@ -109,7 +110,8 @@ button:hover {
 
 .text-container{
   width:80%;
-  margin-bottom: 3vh;
+  // padding: 3vh;
+  margin: auto;
 }
 
 .text-format{
@@ -120,14 +122,14 @@ button:hover {
 
 .form-label{
   margin-top: 1%;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
 //card
 
 .card {
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 8px;
   padding: 20px;
   margin: 10px;
@@ -142,11 +144,28 @@ button:hover {
 .card input[type="text"],
 .card textarea {
   border: none;
-  border-bottom: 1px solid white; /* White underline */
+  border-bottom: 1px solid black; /* White underline */
   background-color: transparent; /* Transparent background */
   padding: 5px 0; /* Adjust padding as needed */
   width: 100%; /* Make input fields fill the width of the card */
   margin-bottom: 10px; /* Add some space between input fields */
-  color: white; /* Text color */
+  color: black; /* Text color */
   font-size: 16px; /* Font size */
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  width:50%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: translateY(-50%);
+  color: white;
 }

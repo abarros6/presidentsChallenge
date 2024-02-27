@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './Home.scss'
 import { useNavigate } from 'react-router-dom';
 import Morrisette from '../../Assets/Morrisette.svg'
+import Western from '../../Assets/Western.svg'
+import Waiting from '../../Assets/Waiting.jpg'
 
 
 const Home = ({code, setCode, isFormComplete, setIsFormComplete}) => {
@@ -52,14 +54,18 @@ const Home = ({code, setCode, isFormComplete, setIsFormComplete}) => {
 
   return (
     <div className="main-container">
-      <h1 className='main-header'>Welcome to MediQueue</h1>
-      <div className='text-container'>
-        <pre className='text-format'>
-          <p>Get in line before you arrive at the hospital by just answering a few questions, and wait at home until a phsyician can assess you.
-          If you are experiencing an urgent medical problem go directly to an emergency room or call 911. </p>
-        </pre>
+      {/* <h1 className='main-header'>MediQueue</h1> */}
+      <img src={Waiting} alt="waiting" className={'morrisette'} style={{width: "50%", height: "auto"}} />
+      <div className='flex-row'>
+        <div className='text-container'>
+          <pre className='text-format'>
+            <p>Get in line before you arrive at the hospital by just answering a few questions, and wait at home until a phsyician can assess you.
+            If you are experiencing an urgent medical problem go directly to an emergency room or call 911. </p>
+          </pre>
+        </div>
+      {/* <img src={Western} alt="Western" style={{width: "50vh", height: "auto"}} className='morrisette'/> */}
       </div>
-      <button className={"join-button"} onClick={handleClick}>Join Queue</button> 
+      <button className={""} onClick={handleClick}>Join Queue</button> 
       <div className='card'>
         <h2>If you are already in the queue, enter your id</h2>
         <input
@@ -72,7 +78,8 @@ const Home = ({code, setCode, isFormComplete, setIsFormComplete}) => {
         />
         <button onClick={handleSubmit}>Submit</button>
       </div>
-      <img src={Morrisette} alt="Morrisette" style={{width: "50vh", height: "auto"}} className='morrisette'/>
+      {/* <img src={Morrisette} alt="Morrisette" style={{width: "50vh", height: "auto"}} className='morrisette'/> */}
+      {/* <img src={Western} alt="Western" style={{width: "50vh", height: "auto"}} className='morrisette'/> */}
     </div>
   );
 };

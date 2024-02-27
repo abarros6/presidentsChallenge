@@ -6,7 +6,7 @@ export default function Popup({popupButtonOnClick, togglePopup, popup, setPopup,
     <>
       {popup && (
         <div className="popup">
-          <div className="overlay"></div>
+          {/* <div className="overlay"></div> */}
           <div className="popup-content">
             <h2>{popupTitle}</h2>
             {!warning && (

@@ -31,7 +31,7 @@ const Queue = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   const [position, setPosition] = useState(0);
   const [popup, setPopup] = useState(false)
 
-  const codeText =`Re-entry code: ${code}`
+  const codeText =`Queue Code: ${code}`
 
   let initPosition = () => {
     let totalPatients = Object.keys(patientList).length

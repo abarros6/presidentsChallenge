@@ -1,6 +1,7 @@
 import React from 'react'
 import './About.scss'
 import Loader from '../Loader/Loader'; // Adjust the import path based on your project structure
+import Western from '../../Assets/Western.svg'
 
 function About() {
 
@@ -9,9 +10,6 @@ function About() {
         <h1 className='main-header'>
             About
         </h1>
-        <h2>
-            Our Mission
-        </h2>
 
         <div className='text-container'>
             <pre className='text-format'>
@@ -41,6 +39,7 @@ function About() {
                     Ontarians becoming comfortable with digital healthcare options through COVID-19 presents an historic opportunity to digitize the waiting room and let hospitals focus on the specialized and important work they are best suited to do.</p>
 
             </pre>
+            <img src={Western} alt="Western" style={{"marginLeft": "40%",width: "25%", height: "auto"}} />
         </div>
     </div>
   )

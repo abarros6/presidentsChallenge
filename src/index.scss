@@ -158,6 +158,11 @@ button:hover {
   flex-direction: row;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction:column;
+}
+
 .title {
   width:50%;
   text-align: center;

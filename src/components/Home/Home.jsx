@@ -63,11 +63,10 @@ const Home = ({code, setCode, isFormComplete, setIsFormComplete}) => {
             If you are experiencing an urgent medical problem go directly to an emergency room or call 911. </p>
           </pre>
         </div>
-      {/* <img src={Western} alt="Western" style={{width: "50vh", height: "auto"}} className='morrisette'/> */}
       </div>
-      <button className={""} onClick={handleClick}>Join Queue</button> 
-      <div className='card'>
-        <h2>If you are already in the queue, enter your id</h2>
+      <button style={{"fontSize" : "3em"}} onClick={handleClick}>Join Queue</button> 
+      <div className={"code-container"}>
+        <h2>Already have a Queue Code?</h2>
         <input
           className='code-input'
           type="text" 
@@ -76,7 +75,7 @@ const Home = ({code, setCode, isFormComplete, setIsFormComplete}) => {
           value={sessionToken}
           onChange={handleChange}
         />
-        <button onClick={handleSubmit}>Submit</button>
+        <button style={{"width":"100%"}}onClick={handleSubmit}>Submit</button>
       </div>
       {/* <img src={Morrisette} alt="Morrisette" style={{width: "50vh", height: "auto"}} className='morrisette'/> */}
       {/* <img src={Western} alt="Western" style={{width: "50vh", height: "auto"}} className='morrisette'/> */}

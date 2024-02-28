@@ -120,10 +120,9 @@ li.navbar_list_items:last-of-type{
   width: 100%;
   background-color: $color-dark;
   margin: 0;
-  display: -ms-grid;
-  display: grid;
-  //grid-template-rows: 1fr repeat(4, 0.5fr);
-  grid-row-gap: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   padding: 0;
   list-style: none;
   clear: both;
@@ -137,18 +136,9 @@ li.navbar_list_items:last-of-type{
   transition: all 0.3s ease;
 }
 
-.menu1 a:first-child {
-  margin-top: 40px;
-}
-
-.menu1 a:last-child {
-  margin-bottom: 40px;
-}
-
 .link1 {
   color: $main-white;
   width: 100%;
-  margin: 0;
   padding: 10px 0;
   font: 700 20px 'Oswald', sans-serif;
 }

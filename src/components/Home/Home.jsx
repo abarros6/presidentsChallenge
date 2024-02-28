@@ -53,18 +53,18 @@ const Home = ({code, setCode, isFormComplete, setIsFormComplete}) => {
   };
 
   return (
-    <div style={{"rowGap": "3vh"}}className="main-container">
+    <div className="main-container">
       {/* <h1 className='main-header'>MediQueue</h1> */}
       <img src={Waiting} alt="waiting" className={'morrisette'} style={{width: "50%", height: "auto"}} />
       <div className='flex-row'>
         <div className='text-container'>
           <pre className='text-format'>
-            <p>Get in line before you arrive at the hospital by just answering a few questions, and wait at home until a phsyician can assess you.
-            If you are experiencing an urgent medical problem go directly to an emergency room or call 911. </p>
+            <p>Get in line before you arrive at the hospital by just answering a few questions, and wait at home until a phsyician can assess you.</p>
+            <p><b>If your medical problem is urgent, go directly to an emergency room or call 911. </b></p>
           </pre>
         </div>
       </div>
-      <button style={{"fontSize" : "3em"}} onClick={handleClick}>Join Queue</button> 
+      <button className='join-button' onClick={handleClick}>Join Queue</button> 
       <div className={"code-container"}>
         <h2>Already have a Queue Code?</h2>
         <input

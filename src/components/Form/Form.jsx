@@ -119,8 +119,8 @@ const Form = ({code, setCode, isFormComplete, setIsFormComplete}) => {
           togglePopup = {togglePopup}
           popup={popup}
           setPopup={setPopup}
-          popupTitle={"Record your code to enter the queue in case you leave."}
-          popupText={`your unique code is ${formData.id}`}
+          popupTitle={"Record your Queue Code to re-enter the queue in case you leave."}
+          popupText={`Your Queue Code is ${formData.id}`}
           warning={false}
         />
       }
